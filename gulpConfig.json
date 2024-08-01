@@ -1,0 +1,12 @@
+{
+    "path": {
+        "src": {
+            "srcPath": "./src",
+            "html": ["/index.html"]
+        },
+        "dist": {
+            "distPath": "./dist",
+            "html": "/"
+        }
+    }
+}

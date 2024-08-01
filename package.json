@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "gulp",
+    "prod": "gulp --prod"
+  },
+  "dependencies": {
+    "sass": "^1.77.8"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "gulp": "^5.0.0",
+    "yargs": "^17.7.2"
+  }
+}
