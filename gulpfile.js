@@ -20,7 +20,7 @@ const gcmq = require('gulp-group-css-media-queries');
 /*Плагин, который будет использован для очистки директории */
 const del = require('del');
 
-const config = require('./gulpConfig.json');
+const config = require('./gulp.config.json');
 const path = config.path;
 
 function isDev() {
