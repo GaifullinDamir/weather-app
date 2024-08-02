@@ -2,11 +2,18 @@
     "path": {
         "src": {
             "srcPath": "./src",
-            "html": ["/index.html"]
+            "html": [
+                "/index.html"
+            ],
+            "style": [
+                "/css/**/*.css",
+                "/scss/**/*.scss"
+            ]
         },
         "dist": {
             "distPath": "./dist",
-            "html": "/"
+            "html": "/",
+            "style": "/assets/css"
         }
     }
 }
