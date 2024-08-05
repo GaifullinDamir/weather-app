@@ -17,9 +17,9 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background: $day;
+        background: $night;
         &-number {
-            color: $day-text;
+            color: $night-text;
             font-size: $h2-font-size;
         }
         &-img {
