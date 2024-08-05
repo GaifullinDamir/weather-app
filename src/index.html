@@ -31,33 +31,40 @@
     </header>
     <main class="main">
         <div class="container">
-            <h1 class="main__head">Погода в городе <span class="span">Казань</span></h1>
+            <h1 class="main__head">Погода в городе <span class="info-value info-value_head">Казань</span></h1>
             <div class="weather-info__container">
-                <div class="weather-info__temperature">
-                    <div class="weather-info__temperature_number">
-                        +25&deg;
+                <div class="left-side">
+                    <div class="weather-info__temperature">
+                        <div class="weather-info__temperature-number">
+                            +25&deg;
+                        </div>
+                        <img
+                            src="./images/icons/02d@2x.png"
+                            alt="weather"
+                            class="weather-info__temperature-img">
                     </div>
-                    <img
-                        src="./images/icons/02d@2x.png"
-                        alt="weather"
-                        class="weather-info__temperature_img">
+                    <div class="weather-info__description">дождь</div>
+                    <div class="weather-info__temperature-feels">Ощущается как: <span class="info-value">+23&deg;</span></div>
+                    <div class="weather-info__pressure">Атмосферное давление: <span class="info-value">1000 ГПа</span></div>
+                    <div class="weather-info__humidity">Влажность: <span class="info-value">45 %</span></div>
+                    <div class="weather-info__visibility">Видимость: <span class="info-value">10 км</span></div>
+                    <div class="weather-info__clouds">Облачность: <span class="info-value">37%</span></div>
+                    <div class="weather-info__rain">Количество осадков за последний час: <span class="info-value">2.37 мм</span></div>
                 </div>
-                <div class="weather-info__description">дождь</div>
-                <div class="weather-info__temperature-feels">+23&deg;</div>
-                <div class="weather-info__pressure">1000 ГПа</div>
-                <div class="weather-info__humidity">45 %</div>
-                <div class="weather-info__visibility">10 км</div>
-                <div class="weather-info__wind">
-                    <div class="wind-widget">
-                        <img
-                            src="./images/icons/wind-compass.svg"
-                            alt="wind-compass"
-                            class="wind-widget__compass">
-                        <img
-                            src="./images/icons/wind-arrow.svg"
-                            alt="wind-arrow"
-                            class="wind-widget__arrow">
-                        <div class="wind-widget__wind_speed">2<br>м/с</div>
+                <div class="right-side">
+                    <div class="weather-info__wind">
+                        <div class="weather-info__wind-head">Ветер:</div>
+                        <div class="wind-widget">
+                            <img
+                                src="./images/icons/wind-compass.svg"
+                                alt="wind-compass"
+                                class="wind-widget__compass">
+                            <img
+                                src="./images/icons/wind-arrow.svg"
+                                alt="wind-arrow"
+                                class="wind-widget__arrow">
+                            <div class="wind-widget__wind-speed">2<br>м/с</div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,37 @@
+.main {
+    &__head {
+        font-size: $h1-font-size;
+        color: $base;
+    }
+}
+
+.weather-info {
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+    &__temperature {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        // border-left: 1px solid $night;
+        // border-right: 1px solid $base;
+        background: $day;
+        &-number {
+            color: $day-text;
+            font-size: $h2-font-size;
+        }
+        &-img {
+            width: 100px;
+        }
+    }
+}
+
+.left-side {
+    width: 60%;
+}
+
+.right-side {
+    width: 40%
+}
