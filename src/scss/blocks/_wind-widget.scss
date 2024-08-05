@@ -1,11 +1,14 @@
 .wind-widget {
+
+    margin: 0 auto;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     &__compass {
-        
+        width: 250px;
     }
     &__arrow {
+        width: 250px;
         position: absolute;
         left: 0;
         transform: rotate(0deg);

@@ -1,5 +1,6 @@
 .main {
     &__head {
+        text-align: center;
         font-size: $h1-font-size;
         color: $base;
     }
@@ -7,6 +8,7 @@
 
 .weather-info {
     &__container {
+        margin-top: 25px;
         display: flex;
         justify-content: center;
     }
@@ -15,8 +17,6 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        // border-left: 1px solid $night;
-        // border-right: 1px solid $base;
         background: $day;
         &-number {
             color: $day-text;
@@ -24,6 +24,19 @@
         }
         &-img {
             width: 100px;
+        }
+    }
+    &__label {
+        color: $base;
+        font-weight:300;
+        font-size: $base-font-size;
+        margin: 15px 0;
+    }
+    &__wind {
+        &-head {
+            color: $base;
+            font-weight:300;
+            font-size: $base-font-size;
         }
     }
 }
@@ -34,4 +47,15 @@
 
 .right-side {
     width: 40%
+}
+
+.info-value {
+    color: $base;
+    font-weight: 100;
+    font-size: $base-font-size;
+
+    &_head {
+        font-size: $h1-font-size;
+        font-weight: 600;
+    }
 }
