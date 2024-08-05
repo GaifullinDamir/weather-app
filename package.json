@@ -5,6 +5,7 @@
   "dependencies": {
     "del": "^6.0.0",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-copy": "^4.0.1",
     "gulp-csso": "^4.0.1",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-if": "^3.0.0",

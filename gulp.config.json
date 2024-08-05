@@ -8,12 +8,16 @@
             "style": [
                 "/css/**/*.css",
                 "/scss/**/*.scss"
+            ],
+            "images": [
+                "/images/**/*.*"
             ]
         },
         "dist": {
             "distPath": "./dist",
             "html": "/",
-            "style": "/assets/css"
+            "style": "/css",
+            "images": "/"
         }
     }
 }

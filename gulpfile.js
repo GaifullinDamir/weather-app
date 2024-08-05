@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+/*Для копирования директории */
+const gulpCopy = require('gulp-copy'); 
 /*Работа с аргументами командной строки */
 const argv = require('yargs').argv;
 /*Запуск локалхоста */
@@ -51,6 +53,16 @@ function moveHtml() {
         .on('end', browserSync.reload);
 }
 
+path.src.images[0] = path.src.srcPath + path.src.images[0];
+path.dist.images = path.dist.distPath + path.dist.images;
+
+function moveImages() {
+    return gulp.src(path.src.images)
+        .pipe(gulpCopy(path.dist.images, {prefix: 1}))
+        .pipe(gulp.dest(path.dist.images))
+        .on('end', browserSync.reload);
+}
+
 path.src.style[0] = path.src.srcPath + path.src.style[0];
 path.src.style[1] = path.src.srcPath + path.src.style[1];
 
@@ -85,13 +97,17 @@ path.watch.style = [];
 path.watch.style[0] = path.src.style[0];
 path.watch.style[1] = path.src.style[1];
 
+path.watch.images = [];
+path.watch.images[0] = path.src.images;
+
 function watch() {
     gulp.watch(path.watch.html, moveHtml);
     gulp.watch(path.watch.style, scss);
+    gulp.watch(path.watch.images, moveImages)
 }
 
 exports.default = gulp.series(
     gulp.parallel(clean),
-    gulp.parallel(moveHtml, scss),
+    gulp.parallel(moveHtml, scss, moveImages),
     gulp.parallel(initServer, watch)
 )
