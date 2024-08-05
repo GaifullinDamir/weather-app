@@ -1,12 +1,27 @@
 * {
     box-sizing: border-box;
     font-family: 'OpenSans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
     position: relative;
-    max-width: 950px;
+    width: 1400px;
+    height: 100%;
     margin: 0 auto;
 }
 
 @import './base/variables';
+@import './base/mixins';
+
+@import './blocks/input';
+@import './blocks/button';
+@import './blocks/header';

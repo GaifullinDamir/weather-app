@@ -1,0 +1,16 @@
+.header {
+    width: 100%;
+    height: 75px;
+    border-bottom: 2px solid $base;
+    margin: 0 auto;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+    &__logo {
+        height: 100%;
+    }
+}

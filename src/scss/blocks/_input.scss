@@ -1,0 +1,16 @@
+.input {
+    height: 35px;
+    font-size: 18px;
+    font-weight: 300;
+    color: $base;
+    border: 1px solid $base;
+    border-radius: 5px;
+    &:focus {
+        border: 2px solid $base;
+        outline: 0;
+    }
+    &::placeholder {
+        font-weight: 300;
+        color: $base;
+    }
+}
