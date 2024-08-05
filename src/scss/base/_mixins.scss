@@ -1,0 +1,15 @@
+// light them
+@mixin button-hover-light {
+    transition: 0.3s all;
+    &:hover {
+        background: $base-dark;
+        border-color: $base-dark;
+    }
+}
+
+@mixin logo-hover {
+    transition: 0.3s all;
+    &:hover {
+        transform: rotate(3deg);
+    }
+}

@@ -12,5 +12,9 @@
     }
     &__logo {
         height: 100%;
+        cursor: pointer;
+        &:hover {
+            @include logo-hover;
+        }
     }
 }

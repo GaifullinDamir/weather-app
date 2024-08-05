@@ -1,10 +1,11 @@
 .input {
     height: 35px;
-    font-size: 18px;
+    font-size: $items-font-size;
     font-weight: 300;
     color: $base;
-    border: 1px solid $base;
+    border: 2px solid $base;
     border-radius: 5px;
+    padding-left: 10px;
     &:focus {
         border: 2px solid $base;
         outline: 0;

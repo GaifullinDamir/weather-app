@@ -1,0 +1,12 @@
+.button {
+    height: 35px;
+    font-size: $items-font-size;
+    color: $white;
+    border: 1px solid $base;
+    border-radius: 5px;
+    background: $base;
+    cursor: pointer;
+    &:hover {
+        @include button-hover-light;
+    }
+}
