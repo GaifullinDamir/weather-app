@@ -1,14 +1,14 @@
 .header {
     width: 100%;
-    height: 75px;
+    height: $header-hight;
     border-bottom: 2px solid $base;
-    margin: 0 auto;
     &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
-        height: 75px;
+        width: $container-width;
+        height: 100%;
+        margin: 0 auto;
     }
     &__logo {
         height: 60px;

@@ -5,19 +5,18 @@
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.container {
-    position: relative;
-    width: 950px;
-    // height: 100vh;
-    margin: 0 auto;
-}
+// .container {
+//     width: 950px;
+//     height: 100%;
+//     margin: 0 auto;
+// }
 
 @import './base/variables';
 @import './base/mixins';
