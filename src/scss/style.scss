@@ -1,3 +1,5 @@
+@import './base/keyframes';
+
 * {
     box-sizing: border-box;
     font-family: 'OpenSans', sans-serif;
@@ -10,13 +12,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(337deg, rgba(229,239,255,1) 15%, rgba(255,255,255,1) 34%, rgba(223,235,255,1) 50%, rgba(255,255,255,1) 63%, rgba(228,243,255,1) 80%, rgba(255,255,255,1) 89%, rgba(232,244,255,1) 100%);
+    background-size: 300% 300%;
+    animation-duration: 25s;
+    animation-name: animate-background;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-// .container {
-//     width: 950px;
-//     height: 100%;
-//     margin: 0 auto;
-// }
+
 
 @import './base/variables';
 @import './base/mixins';
