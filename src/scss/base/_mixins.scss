@@ -13,3 +13,17 @@
         transform: scale(1.1);
     }
 }
+
+@mixin compass-hover {
+    transition: 1s all;
+    &:hover {
+        transform: rotate(1080deg);
+    }
+}
+
+@mixin cloud-hover {
+    transition: 1s all;
+    &:hover {
+        transform: translate(0, -50px);
+    }
+}

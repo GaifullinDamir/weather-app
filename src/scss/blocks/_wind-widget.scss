@@ -1,5 +1,4 @@
 .wind-widget {
-
     margin: 0 auto;
     position: relative;
     width: 250px;
@@ -11,7 +10,9 @@
         width: 250px;
         position: absolute;
         left: 0;
-        transform: rotate(180deg);
+        transform: rotate(0deg);
+        @include compass-hover;
+        cursor: pointer;
     }
     &__wind-speed {
         text-align: center;

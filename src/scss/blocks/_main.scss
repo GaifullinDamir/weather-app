@@ -1,7 +1,7 @@
 .main {
-    height: calc(100% - $header-hight);
+    height: calc(100vh - $header-hight);
     &__container {
-        height: calc(100% - $header-hight);
+        height: calc(100vh - $header-hight);
         width: 950px;
     }
     &__head {
@@ -31,6 +31,7 @@
         }
         &-img {
             width: 100px;
+            @include cloud-hover;
         }
     }
     &__label {
