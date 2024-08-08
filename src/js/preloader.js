@@ -1,7 +1,7 @@
-class Loading {
+export class Preloader {
     constructor() {
         this._preloader = document.createElement('div'),
-        this._preloader.classList.add('preloader hide'),
+        this._preloader.classList.add('preloader', 'hide'),
         this._preloader.innerHTML = `
             <img class="preloader__img" src="../images/icons/preloader.svg" alt="preloader"/>
         `

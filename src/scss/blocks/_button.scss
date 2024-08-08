@@ -9,4 +9,8 @@
     &:hover {
         @include button-hover-light;
     }
+    &_disabled {
+        cursor: not-allowed;
+    }
 }
+

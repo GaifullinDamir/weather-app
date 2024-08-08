@@ -18,7 +18,7 @@ export class Weather {
         windSpeed,
         windDeg
     ) {
-        this._parent = document.querySelector(parentSelector),
+        this._parentSelector = parentSelector,
         this._city = city,
         this._temperature = temperature,
         this._weatherId = weatherId,
@@ -36,7 +36,7 @@ export class Weather {
 
     static convertDataToWeatherValid(data, parentSelector) {
         return {
-            parentSelector,
+            parentSelector: parentSelector,
             city: data.name,
             temperature: data.main.temp,
             weatherId: data.weather[0].id,
@@ -47,8 +47,8 @@ export class Weather {
             humidity: data.main.humidity,
             visibility: data.visibility,
             clouds: data.clouds.all,
-            windSpeed,
-            windDeg
+            windSpeed: data.wind.speed,
+            windDeg: data.wind.deg
         }
     }
 
@@ -56,7 +56,7 @@ export class Weather {
         const element = document.createElement('h1');
         element.classList.add('main__head');
         element.innerHTML = `
-            Местоположение: <span class="info-value info-value_head">${this._city ?? 'отсутствует'}</span>
+            Местоположение: <span class="info-value info-value_head">${this._city}</span>
         `;
         return element;
     }
@@ -67,19 +67,19 @@ export class Weather {
         element.innerHTML = `
             <div class="weather-info__temperature">
                 <div class="weather-info__temperature-number">
-                    ${this._temperature > 0 ? `+${this._temperature}` : this._temperature ?? 'отсутствует'}&deg;
+                    ${this._temperature > 0 ? `+${this._temperature}` : this._temperature}&deg;
                 </div>
                 <img
-                    src="${WEATHER_ICON_URL_BEGINNING}${this._weatherIcon ?? '01d'}${WEATHER_ICON_URL_END}"
+                    src="${WEATHER_ICON_URL_BEGINNING}${this._weatherIcon}${WEATHER_ICON_URL_END}"
                     alt="weather"
                     class="weather-info__temperature-img">
             </div>
-            <div class="weather-info__label" id="weather-descr">Описание: <span class="info-value">${this._weatherDescr ?? 'Описание'}</span></div>
-            <div class="weather-info__label" id="temperature-feels">Ощущается как: <span class="info-value">${this._temperatureFeels > 0 ? `+${this._temperatureFeels}` : this._temperatureFeels ?? 'отсутствует'}&deg;</span></div>
-            <div class="weather-info__label" id="pressure">Атмосферное давление: <span class="info-value">${this._pressure ?? 'отсутствует'}ГПа</span></div>
-            <div class="weather-info__label" id="humidity">Влажность: <span class="info-value">${this._humidity ?? 'отсутствует'}%</span></div>
-            <div class="weather-info__label" id="visibility">Видимость: <span class="info-value">${this._visibility ?? 'отсутствует'} км</span></div>
-            <div class="weather-info__label" id="clouds">Облачность: <span class="info-value">${this._clouds ?? 'отсутствует'}%</span></div>
+            <div class="weather-info__label" id="weather-descr">Описание: <span class="info-value">${this._weatherDescr}</span></div>
+            <div class="weather-info__label" id="temperature-feels">Ощущается как: <span class="info-value">${this._temperatureFeels > 0 ? `+${this._temperatureFeels}` : this._temperatureFeels}&deg;</span></div>
+            <div class="weather-info__label" id="pressure">Атмосферное давление: <span class="info-value">${this._pressure}ГПа</span></div>
+            <div class="weather-info__label" id="humidity">Влажность: <span class="info-value">${this._humidity}%</span></div>
+            <div class="weather-info__label" id="visibility">Видимость: <span class="info-value">${this._visibility} м</span></div>
+            <div class="weather-info__label" id="clouds">Облачность: <span class="info-value">${this._clouds}%</span></div>
         `;
         return element;
     }
@@ -98,8 +98,7 @@ export class Weather {
                             <img
                                 src="./images/icons/wind-arrow.svg"
                                 alt="wind-arrow"
-                                class="wind-widget__arrow"
-                                style="transofrm: rotate(${this._windDeg ?? 0}deg)">
+                                class="wind-widget__arrow">
                             <div class="wind-widget__wind-speed">${this._windSpeed}<br>м/с</div>
                         </div>
                     </div>
@@ -133,7 +132,7 @@ export class Weather {
 
     rotateCompassArrowByDeg(element) {
         const compassArrow = element.querySelector('.wind-widget__arrow');
-        compassArrow.style.transform = `rotate(${this._windDeg ?? 0})`;
+        compassArrow.style.transform = `rotate(${this._windDeg}deg)`;
     }
 
     render() {
@@ -143,16 +142,18 @@ export class Weather {
 
         const temperatureElement = leftSide.querySelector('.weather-info__temperature');
         const compassElement = rightSide.querySelector('.wind-widget');
+        const parent = document.querySelector('.main__container');
 
         this.changeColorByTime(temperatureElement);
         this.rotateCompassArrowByDeg(compassElement);
 
-        this._parent.innerHTML = `
-            ${head}
-            ${leftSide}
-            ${rightSide}
+        parent.innerHTML = `
+            ${head.outerHTML}
+            <div class="weather-info__container">
+                ${leftSide.outerHTML}
+                ${rightSide.outerHTML}
+            </div>
         `;
-
-        this._parent.classList.remove('hide');
+        parent.classList.remove('hide');
     }
 }
