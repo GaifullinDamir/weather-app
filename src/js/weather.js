@@ -2,8 +2,9 @@
 
 import { WEATHER_ICON_URL_BEGINNING, WEATHER_ICON_URL_END } from "./consts";
 
-class Weather {
+export class Weather {
     constructor(
+        parentSelector,
         city,
         temperature,
         weatherId,
@@ -14,10 +15,10 @@ class Weather {
         humidity,
         visibility,
         clouds,
-        rain,
         windSpeed,
         windDeg
     ) {
+        this._parent = document.querySelector(parentSelector),
         this._city = city,
         this._temperature = temperature,
         this._weatherId = weatherId,
@@ -28,12 +29,30 @@ class Weather {
         this._humidity = humidity,
         this._visibility = visibility,
         this._clouds = clouds,
-        this._rain = rain,
         this._windSpeed = windSpeed,
         this._windDeg = windDeg,
         this._date = new Date()
     }
-    returnHead() {
+
+    static convertDataToWeatherValid(data, parentSelector) {
+        return {
+            parentSelector,
+            city: data.name,
+            temperature: data.main.temp,
+            weatherId: data.weather[0].id,
+            weatherIcon: data.weather[0].icon,
+            weatherDescr: data.weather[0].description,
+            temperatureFeels: data.main.feels_like,
+            pressure: data.main.pressure,
+            humidity: data.main.humidity,
+            visibility: data.visibility,
+            clouds: data.clouds.all,
+            windSpeed,
+            windDeg
+        }
+    }
+
+    makeHead() {
         const element = document.createElement('h1');
         element.classList.add('main__head');
         element.innerHTML = `
@@ -42,7 +61,7 @@ class Weather {
         return element;
     }
 
-    returnLeftSide() {
+    makeLeftSide() {
         const element = document.createElement('div');
         element.classList.add('left-side');
         element.innerHTML = `
@@ -61,12 +80,11 @@ class Weather {
             <div class="weather-info__label" id="humidity">Влажность: <span class="info-value">${this._humidity ?? 'отсутствует'}%</span></div>
             <div class="weather-info__label" id="visibility">Видимость: <span class="info-value">${this._visibility ?? 'отсутствует'} км</span></div>
             <div class="weather-info__label" id="clouds">Облачность: <span class="info-value">${this._clouds ?? 'отсутствует'}%</span></div>
-            <div class="weather-info__label" id="rain">Количество осадков за последний час: <span class="info-value">${this._rain ?? 'отсутствует'} мм</span></div>
         `;
         return element;
     }
 
-    returnRightSide() {
+    makeRightSide() {
         const element = document.createElement('div');
         element.classList.add('right-side');
         element.innerHTML = `
@@ -80,11 +98,61 @@ class Weather {
                             <img
                                 src="./images/icons/wind-arrow.svg"
                                 alt="wind-arrow"
-                                class="wind-widget__arrow">
-                            <div class="wind-widget__wind-speed">2<br>м/с</div>
+                                class="wind-widget__arrow"
+                                style="transofrm: rotate(${this._windDeg ?? 0}deg)">
+                            <div class="wind-widget__wind-speed">${this._windSpeed}<br>м/с</div>
                         </div>
                     </div>
         `;
+        return element;
     }
 
+    changeColorByTime(element) {
+        const temperatureElement = element;
+        const temberatureNumber = element.querySelector('.weather-info__temperature-number');
+        let backgroundColor = '';
+        let textColor = '';
+        const time = this._date.getHours();
+
+        if (time >= 0 &&  time < 5) {
+            backgroundColor = '$night';
+            textColor = '$night-text';
+        } else if (time >= 5 && time < 12) {
+            backgroundColor = '$morning';
+            textColor = '$morning-text';
+        } else if (time >= 12 && time < 19) {
+            backgroundColor = '$day';
+            textColor = '$day-text';
+        } else {
+            backgroundColor = 'evening';
+            textColor = 'evening-text';
+        }
+        temperatureElement.style.background = backgroundColor;
+        temberatureNumber.style.color = textColor;
+    }
+
+    rotateCompassArrowByDeg(element) {
+        const compassArrow = element.querySelector('.wind-widget__arrow');
+        compassArrow.style.transform = `rotate(${this._windDeg ?? 0})`;
+    }
+
+    render() {
+        const head = this.makeHead();
+        const leftSide = this.makeLeftSide();
+        const rightSide = this.makeRightSide();
+
+        const temperatureElement = leftSide.querySelector('.weather-info__temperature');
+        const compassElement = rightSide.querySelector('.wind-widget');
+
+        this.changeColorByTime(temperatureElement);
+        this.rotateCompassArrowByDeg(compassElement);
+
+        this._parent.innerHTML = `
+            ${head}
+            ${leftSide}
+            ${rightSide}
+        `;
+
+        this._parent.classList.remove('hide');
+    }
 }

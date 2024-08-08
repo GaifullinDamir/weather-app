@@ -20,8 +20,6 @@ body {
     animation-direction: alternate;
 }
 
-
-
 @import './base/variables';
 @import './base/mixins';
 
@@ -31,4 +29,14 @@ body {
 @import './blocks/wind-widget';
 @import './blocks/header';
 @import './blocks/main';
+@import './blocks/plug';
 @import './blocks/footer';
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

@@ -9,7 +9,15 @@ export const getWeatherData = async (city) => {
         data = response.data;
     } catch(error) {
         const response = await error.response;
-        data = response.data;
+        if (response) {
+            data = response.data;
+        } else {
+            data = {
+                cod: "522",
+                message: "net::ERR_CONNECTION_TIMED_OUT"
+            }
+        }
+        
     }
     return data;
 }

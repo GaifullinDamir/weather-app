@@ -1,0 +1,26 @@
+.plug {
+    &__container {
+        height: calc(100vh - $header-hight);
+        width: 950px;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20%;
+    }
+    &__head {
+        text-align: center;
+        font-size: $h1-font-size;
+        font-weight: 500;
+        color: $base;
+    }
+    &__text {
+        text-align: center;
+        color: $base;
+        font-size: $plug-text-font-size;
+    }
+    &__highlight {
+        color: $base-highlight;
+        font-size: $plug-text-font-size;
+    }
+}

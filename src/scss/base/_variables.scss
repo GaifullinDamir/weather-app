@@ -8,13 +8,9 @@ $base-shadow: #71aaeb6b;
 $white: #ffffff;
 
 // Цвета для иконки с погодой
-// $morning: #7187eb85;
 $morning: radial-gradient(50.00% 50.00% at 50% 50%,rgb(113, 135, 235, 0.35),rgba(255, 255, 255, 0) 100%);
-// $day: #62d3ff81;
 $day: radial-gradient(50.00% 50.00% at 50% 50%,rgba(98, 211, 255, 0.35) 5.344%,rgba(255, 255, 255, 0) 100%);
-// $evening: #ffaa4975;
 $evening: radial-gradient(50.00% 50.00% at 50% 50%,rgba(255, 170, 73, 0.35) 5.344%,rgba(255, 255, 255, 0) 100%);
-// $night: #3953c980;
 $night: radial-gradient(50.00% 50.00% at 50% 50%,rgba(57, 83, 201, 0.35),rgba(255, 255, 255, 0) 100%);
 
 $morning-text: #559ae9;
@@ -28,6 +24,7 @@ $label-text-font-size: 30px;
 $items-font-size: 18px;
 $h1-font-size: 36px;
 $h2-font-size: 28px;
+$plug-text-font-size: 24px;
 
 $header-hight: 75px;
 $container-width: 950px;
