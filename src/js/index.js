@@ -15,4 +15,5 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     form.addEventListener('submit', handleSubmit);
+
 })
