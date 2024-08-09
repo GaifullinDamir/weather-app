@@ -125,27 +125,39 @@ export class Weather {
      * @param {HTMLElement} element - Элемент, в котором отображается текущая температура и погодные условия.
      */
     changeColorByTime(element) {
+        debugger
         const temperatureElement = element;
-        const temberatureNumber = element.querySelector('.weather-info__temperature-number');
+        const temperatureNumber = element.querySelector('.weather-info__temperature-number');
         let backgroundColor = '';
         let textColor = '';
         const time = this._date.getHours();
 
+        const colors = {
+            morning: 'radial-gradient(50.00% 50.00% at 50% 50%,rgb(113, 135, 235, 0.35),rgba(255, 255, 255, 0) 100%)',
+            day: 'radial-gradient(50.00% 50.00% at 50% 50%,rgba(98, 211, 255, 0.35) 5.344%,rgba(255, 255, 255, 0) 100%)',
+            evening: 'radial-gradient(50.00% 50.00% at 50% 50%,rgba(255, 170, 73, 0.35) 5.344%,rgba(255, 255, 255, 0) 100%)',
+            night: 'radial-gradient(50.00% 50.00% at 50% 50%,rgba(57, 83, 201, 0.35),rgba(255, 255, 255, 0) 100%)',
+            morningText: '#559ae9',
+            dayText: '#2d8fff',
+            eveningText: '#7dbaff',
+            nightText: '#FFC22F'
+        }
+
         if (time >= 0 &&  time < 5) {
-            backgroundColor = '$night';
-            textColor = '$night-text';
+            backgroundColor = colors.night;
+            textColor = colors.nightText;
         } else if (time >= 5 && time < 12) {
-            backgroundColor = '$morning';
-            textColor = '$morning-text';
+            backgroundColor = colors.morning;
+            textColor = colors.morningText;
         } else if (time >= 12 && time < 19) {
-            backgroundColor = '$day';
-            textColor = '$day-text';
+            backgroundColor = colors.day;
+            textColor = colors.dayText;
         } else {
-            backgroundColor = 'evening';
-            textColor = 'evening-text';
+            backgroundColor = colors.evening;
+            textColor = colors.eveningText;
         }
         temperatureElement.style.background = backgroundColor;
-        temberatureNumber.style.color = textColor;
+        temperatureNumber.style.color = textColor;
     }
 
     /**

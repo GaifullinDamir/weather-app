@@ -19,17 +19,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const city = e.target[0].value;
         let data;
-        let weatherDTO;
 
         if(city && city != '') {
             data = await getWeatherData(city);
-            weatherDTO = new WeatherDTO(data, '.main__container');
         } else {
             alert('Введите населенный пункт.');
         }
 
         if (data) {
             if (data.cod === 200) {
+                const weatherDTO = new WeatherDTO(data, '.main__container');
                 const weatherComponent = new Weather(
                     weatherDTO.parent,
                     weatherDTO.city,
