@@ -20,11 +20,11 @@ export class Weather {
     ) {
         this._parentSelector = parentSelector,
         this._city = city,
-        this._temperature = temperature,
+        this._temperature = Math.trunc(temperature - 272.1, 1),
         this._weatherId = weatherId,
         this._weatherIcon = weatherIcon,
         this._weatherDescr = weatherDescr,
-        this._temperatureFeels = temperatureFeels,
+        this._temperatureFeels = Math.trunc(temperatureFeels - 272.1, 1),
         this._pressure = pressure,
         this._humidity = humidity,
         this._visibility = visibility,
