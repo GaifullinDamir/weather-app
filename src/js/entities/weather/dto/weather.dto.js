@@ -24,7 +24,7 @@ export class WeatherDTO {
         this.clouds = data?.clouds?.all || 'Отсутствует',
         this.windSpeed = data?.wind?.speed || 'Отсутствует',
         this.windDeg = data?.wind?.deg || 'Отсутствует',
-        this.date = new Date()
+        this.date = data?.dt || 'Отсутствует'
     }
 
 }

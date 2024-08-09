@@ -130,7 +130,7 @@ export class Weather {
         const temperatureNumber = element.querySelector('.weather-info__temperature-number');
         let backgroundColor = '';
         let textColor = '';
-        const time = this._date.getHours();
+        const time = new Date(this._date * 1000).getHours();
 
         const colors = {
             morning: 'radial-gradient(50.00% 50.00% at 50% 50%,rgb(113, 135, 235, 0.35),rgba(255, 255, 255, 0) 100%)',

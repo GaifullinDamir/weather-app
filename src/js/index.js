@@ -1,7 +1,7 @@
 'use strict'
 import { getWeatherData } from "../http/weatherAPI";
 import { Weather, WeatherDTO } from "./entities";
-import { Preloader } from "./widgets";
+import { Preloader, Modal } from "./widgets";
 
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.search-form');
@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const plug = document.querySelector('.plug__container');
     const preloader = new Preloader();
     preloader.render();
-
+    const modal = new Modal();
+    modal.render();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -23,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if(city && city != '') {
             data = await getWeatherData(city);
         } else {
-            alert('Введите населенный пункт.');
+            modal.show('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
         }
 
         if (data) {
