@@ -1,10 +1,11 @@
 'use strict'
 
-import { WEATHER_ICON_URL_BEGINNING, WEATHER_ICON_URL_END } from "../../consts";
+import { WEATHER_ICON_URL_BEGINNING, WEATHER_ICON_URL_END } from "../../utils/consts";
 
 export class Weather {
     /**
      * Конструктор для созданиия компонента Weather.
+     * Weather отвечает за отображение данных о погоде на сайте.
      * @constructor
      * @param parent - элемент DOM являющийся родителем для текущего компонента.
      * @param {string} city - данные о городе.
@@ -74,6 +75,7 @@ export class Weather {
         element.classList.add('left-side');
         element.innerHTML = `
             <div class="weather-info__temperature">
+
                 <div class="weather-info__temperature-number">
                     ${this._temperature > 0 ? `+${this._temperature}` : this._temperature}&deg;
                 </div>
@@ -165,18 +167,17 @@ export class Weather {
 
         const temperatureElement = leftSide.querySelector('.weather-info__temperature');
         const compassElement = rightSide.querySelector('.wind-widget');
-        const parent = document.querySelector('.main__container');
 
         this.changeColorByTime(temperatureElement);
         this.rotateCompassArrowByDeg(compassElement);
 
-        parent.innerHTML = `
+        this._parent.innerHTML = `
             ${head.outerHTML}
             <div class="weather-info__container">
                 ${leftSide.outerHTML}
                 ${rightSide.outerHTML}
             </div>
         `;
-        parent.classList.remove('hide');
+        this._parent.classList.remove('hide');
     }
 }

@@ -1,7 +1,7 @@
 'use strict'
 import { getWeatherData } from "../http/weatherAPI";
-import { Weather } from "./weather";
-import { Preloader } from "./preloader";
+import { Weather, WeatherDTO } from "./entities";
+import { Preloader } from "./widgets";
 
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.search-form');
@@ -9,38 +9,42 @@ window.addEventListener('DOMContentLoaded', () => {
     const plug = document.querySelector('.plug__container');
     const preloader = new Preloader();
     preloader.render();
+
+
     async function handleSubmit(e) {
         e.preventDefault();
 
         searchButton.classList.add('button_disabled');
         preloader.loadingStart();
+
         const city = e.target[0].value;
         let data;
+        let weatherDTO;
+
         if(city && city != '') {
-            data = await getWeatherData(city); 
+            data = await getWeatherData(city);
+            weatherDTO = new WeatherDTO(data, '.main__container');
         } else {
             alert('Введите населенный пункт.');
         }
 
         if (data) {
             if (data.cod === 200) {
-                const convertedData = Weather.convertDataToWeatherValid(data, ".main__container");
-                console.log(convertedData)
-                
                 const weatherComponent = new Weather(
-                    convertedData.parentSelector,
-                    convertedData.city,
-                    convertedData.temperature,
-                    convertedData.weatherId,
-                    convertedData.weatherIcon,
-                    convertedData.weatherDescr,
-                    convertedData.temperatureFeels,
-                    convertedData.pressure,
-                    convertedData.humidity,
-                    convertedData.visibility,
-                    convertedData.clouds,
-                    convertedData.windSpeed,
-                    convertedData.windDeg
+                    weatherDTO.parent,
+                    weatherDTO.city,
+                    weatherDTO.temperature,
+                    weatherDTO.weatherId,
+                    weatherDTO.weatherIcon,
+                    weatherDTO.weatherDescr,
+                    weatherDTO.temperatureFeels,
+                    weatherDTO.pressure,
+                    weatherDTO.humidity,
+                    weatherDTO.visibility,
+                    weatherDTO.clouds,
+                    weatherDTO.windSpeed,
+                    weatherDTO.windDeg,
+                    weatherDTO.date
                 );
                 weatherComponent.render();
                 plug.classList.add('hide');

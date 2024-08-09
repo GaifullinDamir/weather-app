@@ -1,8 +1,9 @@
 /** @module WeatherDTO */
 
-class WeatherDTO {
+export class WeatherDTO {
     /**
-     * Конструктор для созданиия DTO.
+     * Конструктор для создания WeatherDTO.
+     * WeatherDTO требуе
      * @constructor
      * @param data - объект с данными о погоде.
      * @param {string} parentSelector - селектор родительского блока для компонента с погодой.
@@ -10,20 +11,20 @@ class WeatherDTO {
     constructor(
         data = null, parentSelector = '.main__container'
     ) {
-        this._parent = document.querySelector(parentSelector),
-        this._city = data?.name || 'Отсутствует',
-        this._temperature = data?.main?.temp ? Math.trunc(data?.main?.temp - 272.1, 1) : 'Нет данных',
-        this._weatherId = data?.weather[0].id || 'Отсутствует',
-        this._weatherIcon = data?.weather[0].icon || 'Отсутствует',
-        this._weatherDescr = data?.weather[0].description || 'Отсутствует',
-        this._temperatureFeels = data?.main?.feels_like ? Math.trunc(data?.main?.feels_like - 272.1, 1) : 'Нет данных',
-        this._pressure = data?.main?.pressure || 'Отсутствует',
-        this._humidity = data?.main?.humidity || 'Отсутствует',
-        this._visibility = data?.visibility || 'Отсутствует',
-        this._clouds = data?.clouds?.all || 'Отсутствует',
-        this._windSpeed = data?.wind?.speed || 'Отсутствует',
-        this._windDeg = data?.wind?.deg || 'Отсутствует',
-        this._date = new Date()
+        this.parent = document.querySelector(parentSelector),
+        this.city = data?.name || 'Отсутствует',
+        this.temperature = data?.main?.temp ? Math.trunc(data?.main?.temp - 272.1, 1) : 'Нет данных',
+        this.weatherId = data?.weather[0].id || 'Отсутствует',
+        this.weatherIcon = data?.weather[0].icon || 'Отсутствует',
+        this.weatherDescr = data?.weather[0].description || 'Отсутствует',
+        this.temperatureFeels = data?.main?.feels_like ? Math.trunc(data?.main?.feels_like - 272.1, 1) : 'Нет данных',
+        this.pressure = data?.main?.pressure || 'Отсутствует',
+        this.humidity = data?.main?.humidity || 'Отсутствует',
+        this.visibility = data?.visibility || 'Отсутствует',
+        this.clouds = data?.clouds?.all || 'Отсутствует',
+        this.windSpeed = data?.wind?.speed || 'Отсутствует',
+        this.windDeg = data?.wind?.deg || 'Отсутствует',
+        this.date = new Date()
     }
 
 }
