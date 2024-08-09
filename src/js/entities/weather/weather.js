@@ -1,10 +1,28 @@
 'use strict'
 
-import { WEATHER_ICON_URL_BEGINNING, WEATHER_ICON_URL_END } from "./consts";
+import { WEATHER_ICON_URL_BEGINNING, WEATHER_ICON_URL_END } from "../../consts";
 
 export class Weather {
+    /**
+     * Конструктор для созданиия компонента Weather.
+     * @constructor
+     * @param parent - элемент DOM являющийся родителем для текущего компонента.
+     * @param {string} city - данные о городе.
+     * @param {number} temperature - данные о температуре.
+     * @param {number} weatherId - данные об id текущей погоды.
+     * @param {string} weatherIcon - данные об id иконки погоды.
+     * @param {string} weatherDescr - описание погодных условий.
+     * @param {number} temperatureFeels - данные о том, какой ощущается температуры.
+     * @param {number} pressure - данные об атмосферном давлении.
+     * @param {number} humidity - данные о влажности.
+     * @param {number} visibility - данные о видимости.
+     * @param {number} clouds - данные об облачности.
+     * @param {number} windSpeed - данные о скорости ветра.
+     * @param {number} windDeg - данные о направлении ветра.
+     * @param {Date} date - данные о текущей дате.
+     */
     constructor(
-        parentSelector,
+        parent,
         city,
         temperature,
         weatherId,
@@ -16,42 +34,28 @@ export class Weather {
         visibility,
         clouds,
         windSpeed,
-        windDeg
+        windDeg,
+        date
     ) {
-        this._parentSelector = parentSelector,
+        this._parent = parent,
         this._city = city,
-        this._temperature = Math.trunc(temperature - 272.1, 1),
+        this._temperature = temperature,
         this._weatherId = weatherId,
         this._weatherIcon = weatherIcon,
         this._weatherDescr = weatherDescr,
-        this._temperatureFeels = Math.trunc(temperatureFeels - 272.1, 1),
+        this._temperatureFeels = temperatureFeels,
         this._pressure = pressure,
         this._humidity = humidity,
         this._visibility = visibility,
         this._clouds = clouds,
         this._windSpeed = windSpeed,
         this._windDeg = windDeg,
-        this._date = new Date()
+        this._date = date
     }
-
-    static convertDataToWeatherValid(data, parentSelector) {
-        return {
-            parentSelector: parentSelector,
-            city: data.name,
-            temperature: data.main.temp,
-            weatherId: data.weather[0].id,
-            weatherIcon: data.weather[0].icon,
-            weatherDescr: data.weather[0].description,
-            temperatureFeels: data.main.feels_like,
-            pressure: data.main.pressure,
-            humidity: data.main.humidity,
-            visibility: data.visibility,
-            clouds: data.clouds.all,
-            windSpeed: data.wind.speed,
-            windDeg: data.wind.deg
-        }
-    }
-
+    /**
+     * Метод, создающий заголовок первого порядка с названием города.
+     * @returns {HTMLElement}
+     */
     makeHead() {
         const element = document.createElement('h1');
         element.classList.add('main__head');
@@ -61,6 +65,10 @@ export class Weather {
         return element;
     }
 
+     /**
+     * Метод, создающий левую колонку с данным о погоде.
+     * @returns {HTMLElement}
+     */
     makeLeftSide() {
         const element = document.createElement('div');
         element.classList.add('left-side');
@@ -84,28 +92,36 @@ export class Weather {
         return element;
     }
 
+     /**
+     * Метод, создающий правую колонку с данными о ветре.
+     * @returns {HTMLElement}
+     */
     makeRightSide() {
         const element = document.createElement('div');
         element.classList.add('right-side');
         element.innerHTML = `
             <div class="weather-info__wind">
-                        <div class="weather-info__wind-head">Данные о ветре</div>
-                        <div class="wind-widget">
-                            <img
-                                src="./images/icons/wind-compass.svg"
-                                alt="wind-compass"
-                                class="wind-widget__compass">
-                            <img
-                                src="./images/icons/wind-arrow.svg"
-                                alt="wind-arrow"
-                                class="wind-widget__arrow">
-                            <div class="wind-widget__wind-speed">${this._windSpeed}<br>м/с</div>
-                        </div>
-                    </div>
+                <div class="weather-info__wind-head">Данные о ветре</div>
+                <div class="wind-widget">
+                    <img
+                        src="./images/icons/wind-compass.svg"
+                        alt="wind-compass"
+                        class="wind-widget__compass">
+                    <img
+                        src="./images/icons/wind-arrow.svg"
+                        alt="wind-arrow"
+                        class="wind-widget__arrow">
+                    <div class="wind-widget__wind-speed">${this._windSpeed}<br>м/с</div>
+                </div>
+            </div>
         `;
         return element;
     }
 
+    /**
+     * Метод, изменяющий цвет шрифта и фона в зависимости от времени суток.
+     * @param {HTMLElement} element - Элемент, в котором отображается текущая температура и погодные условия.
+     */
     changeColorByTime(element) {
         const temperatureElement = element;
         const temberatureNumber = element.querySelector('.weather-info__temperature-number');
@@ -130,11 +146,18 @@ export class Weather {
         temberatureNumber.style.color = textColor;
     }
 
+    /**
+     * Метод, изменяющий направление стрелки компаса в зависимости от направления ветра.
+     * @param {HTMLElement} element - Элемент - стрелка компаса, показывающего направление ветра и скорость ветра.
+     */
     rotateCompassArrowByDeg(element) {
         const compassArrow = element.querySelector('.wind-widget__arrow');
         compassArrow.style.transform = `rotate(${this._windDeg}deg)`;
     }
-
+    
+    /**
+     * Метод, который собиарет итоговый элемент и добавляет его к родительскому элементу.
+     */
     render() {
         const head = this.makeHead();
         const leftSide = this.makeLeftSide();
