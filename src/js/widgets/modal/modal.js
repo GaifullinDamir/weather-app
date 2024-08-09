@@ -18,7 +18,6 @@ export class Modal {
         <div class="modal__container">
             <div class="modal__close-item"></div>
             <div class="modal__header">${header}</div>
-            <div class="modal__delimeter"></div>
             <div class="modal__message">${message}</div>
         </div>
         `;
