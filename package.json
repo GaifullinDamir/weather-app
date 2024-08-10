@@ -3,6 +3,7 @@
     "last 4 versions"
   ],
   "dependencies": {
+    "2gis-maps": "^3.7.4",
     "axios": "^1.7.3",
     "crypto-browserify": "^3.12.0",
     "del": "^6.0.0",

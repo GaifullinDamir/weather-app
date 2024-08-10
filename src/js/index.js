@@ -1,15 +1,16 @@
 'use strict'
 import { getWeatherData } from "../http/weatherAPI";
 import { Weather, WeatherDTO } from "./entities";
-import { Preloader, Modal } from "./widgets";
+import { Preloader, Modal, Map } from "./widgets";
 
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.search-form');
     const searchButton = document.querySelector('.search-form__button');
     const plug = document.querySelector('.plug__container');
     const preloader = new Preloader();
-    preloader.render();
     const modal = new Modal();
+
+    preloader.render();
     modal.render();
     
     
@@ -48,6 +49,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     weatherDTO.date
                 );
                 weatherComponent.render();
+                const map = new Map(weatherDTO._longitude, weatherDTO._latitude);
+                map.render();
                 plug.classList.add('hide');
             } else if (data.cod === '404') {
                 modal.show('Данные не найдены.');

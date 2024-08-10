@@ -24,7 +24,9 @@ export class WeatherDTO {
         this.clouds = data?.clouds?.all || 'Отсутствует',
         this.windSpeed = data?.wind?.speed || 'Отсутствует',
         this.windDeg = data?.wind?.deg || 'Отсутствует',
-        this.date = data?.dt || 'Отсутствует'
+        this.date = data?.dt || 'Отсутствует',
+        this._longitude = data?.coord?.lon || 0,
+        this._latitude = data?.coord?.lat || 0
     }
 
 }
