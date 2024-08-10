@@ -13,7 +13,8 @@ export class Theme {
         this._thems = {
             0: 'light',
             1: 'dark'
-        }
+        },
+        document.documentElement.setAttribute('data-theme', this._thems[this._currentThemeId])
     }
 
     /**

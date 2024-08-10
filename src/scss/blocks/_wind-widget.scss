@@ -15,8 +15,8 @@
     }
     &__wind-speed {
         text-align: center;
-        color: $base;
-        font-size: $items-font-size;
+        color: var(--base);
+        font-size: var(--items-font-size);
         font-weight: 600;
         position: absolute;
         top: calc(50% - 18px);

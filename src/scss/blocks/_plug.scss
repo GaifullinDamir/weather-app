@@ -1,6 +1,6 @@
 .plug {
     &__container {
-        height: calc(100vh - $header-hight);
+        height: calc(100vh - var(--header-hight));
         width: 950px;
         flex-direction: column;
         display: flex;
@@ -10,17 +10,17 @@
     }
     &__head {
         text-align: center;
-        font-size: $h1-font-size;
+        font-size: var(--h1-font-size);
         font-weight: 500;
-        color: $base;
+        color: var(--base);
     }
     &__text {
         text-align: center;
-        color: $base;
-        font-size: $plug-text-font-size;
+        color: var(--base);
+        font-size: var(--plug-text-font-size);
     }
     &__highlight {
-        color: $base-highlight;
-        font-size: $plug-text-font-size;
+        color: var(--base-highlight);
+        font-size: var(--plug-text-font-size);
     }
 }

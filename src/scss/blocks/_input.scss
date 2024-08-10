@@ -1,19 +1,19 @@
 .input {
     height: 35px;
-    font-size: $items-font-size;
+    font-size: var(--items-font-size);
     font-weight: 300;
-    color: $base;
+    color:var(--base);
     border: none;
-    box-shadow: inset 0px 0px 5px 0px $base;
+    box-shadow: inset 0px 0px 5px 0px var(--base);
     background: none;
     border-radius: 5px;
     padding-left: 10px;
     &:focus {
-        box-shadow: inset 0px 0px 5px 0px $base;
+        box-shadow: inset 0px 0px 5px 0px var(--base);
         outline: 0;
     }
     &::placeholder {
         font-weight: 300;
-        color: $base;
+        color: var(--base);
     }
 }

@@ -9,9 +9,9 @@
     }
     &__head {
         text-align: center;
-        font-size: $h1-font-size;
+        font-size: var(--h1-font-size);
         font-weight: 300;
-        color: $base;
+        color: var(--base);
     }
 }
 
@@ -28,10 +28,10 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background: $night;
+        background: radial-gradient(50.00% 50.00% at 50% 50%,rgba(57, 83, 201, 0.35),rgba(255, 255, 255, 0) 100%);
         &-number {
-            color: $night-text;
-            font-size: $h2-font-size;
+            color: #FFC22F;
+            font-size: var(--h2-font-size);
         }
         &-img {
             width: 100px;
@@ -39,17 +39,17 @@
         }
     }
     &__label {
-        color: $base;
+        color: var(--base);
         font-weight:300;
-        font-size: $base-font-size;
+        font-size: var(--base-font-size);
         margin: 15px 0;
     }
     &__wind {
         &-head {
             text-align: center;
-            color: $base;
+            color: var(--base);
             font-weight:300;
-            font-size: $base-font-size;
+            font-size: var(--base-font-size);
         }
     }
 }
@@ -66,12 +66,12 @@
 }
 
 .info-value {
-    color: $base-highlight;
+    color: var(--base-highlight);
     font-weight: 100;
-    font-size: $base-font-size;
+    font-size: var(--base-font-size);
 
     &_head {
-        font-size: $h1-font-size;
+        font-size: var(--h1-font-size);
         font-weight: 300;
     }
 }

@@ -4,12 +4,13 @@ import { Weather, WeatherDTO } from "./entities";
 import { Preloader, Modal, Map, Theme } from "./widgets";
 
 window.addEventListener('DOMContentLoaded', () => {
+    const theme = new Theme();
     const form = document.querySelector('.search-form');
     const searchButton = document.querySelector('.search-form__button');
     const plug = document.querySelector('.plug__container');
     const preloader = new Preloader();
     const modal = new Modal();
-    const theme = new Theme();
+    
 
     preloader.render();
     modal.render();

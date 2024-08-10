@@ -4,7 +4,7 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    background: $after-modal-color;
+    background: var(--after-modal-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,21 +13,21 @@
         position: relative;
         width: 520px;
         height: 280px;
-        background: $background-base;
+        background: var(--background-base);
         background-size: 300% 300%;
         animation-duration: 25s;
         animation-name: animate-background;
         animation-iteration-count: infinite;
         animation-direction: alternate;
-        box-shadow: 0px 0px 15px 0px $base;
+        box-shadow: 0px 0px 15px 0px var(--base);
         border-radius: 5px;
     }
     &__header {
         z-index: 0;
         position: relative;
         text-align: center;
-        color: $base-highlight;
-        font-size: $h2-font-size;
+        color: var(--base-highlight);
+        font-size: var(--h2-font-size);
         padding: 5px 0;
     }
     &__header::after {
@@ -35,7 +35,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: $base;
+        background: var(--base);
         width: 100%;
         height: 2px;
     }
@@ -43,8 +43,8 @@
         text-align: center;
         height: 230px;
         max-height: 230px;
-        color: $base;
-        font-size: $base-font-size;
+        color: var(--base);
+        font-size: var(--base-font-size);
         font-weight: 100;
         overflow-y: scroll;
         padding: 15px 20px;
@@ -70,7 +70,7 @@
             position: absolute;
             right: 5px;
             top: 17px;
-            background: $base-highlight;
+            background: var(--base-highlight);
             width: 25px;
             height: 4px;
             transform: rotate(45deg);
@@ -81,7 +81,7 @@
             position: absolute;
             right: 5px;
             top: 17px;
-            background: $base-highlight;
+            background: var(--base-highlight);
             width: 25px;
             height: 4px;
             transform: rotate(135deg);

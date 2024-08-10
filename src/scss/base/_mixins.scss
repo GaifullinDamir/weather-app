@@ -2,8 +2,8 @@
 @mixin button-hover-light {
     transition: 0.3s all;
     &:hover {
-        background: $base-dark;
-        border-color: $base-dark;
+        background: var(--base-highlight);
+        border-color: var(--base-highlight);
     }
 }
 

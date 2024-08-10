@@ -1,10 +1,10 @@
 .button {
     height: 35px;
-    font-size: $items-font-size;
-    color: $white;
-    border: 1px solid $base;
+    font-size: var(--items-font-size);
+    color: #ffffff;
+    border: 1px solid var(--base);
     border-radius: 5px;
-    background: $base;
+    background: var(--base);
     cursor: pointer;
     &:hover {
         @include button-hover-light;

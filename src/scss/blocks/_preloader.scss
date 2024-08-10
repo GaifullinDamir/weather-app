@@ -4,7 +4,7 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    background: $background-base;
+    background: var(--background-base);
     background-size: 300% 300%;
     animation-duration: 25s;
     animation-name: animate-background;
