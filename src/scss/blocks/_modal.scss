@@ -10,6 +10,7 @@
     align-items: center;
     padding-bottom: 15%;
     &__container {
+        position: relative;
         width: 520px;
         height: 280px;
         background: $background-base;
@@ -22,6 +23,7 @@
         border-radius: 5px;
     }
     &__header {
+        z-index: 0;
         position: relative;
         text-align: center;
         color: $base-highlight;
@@ -38,7 +40,8 @@
         height: 2px;
     }
     &__message {
-        text-align: justify;
+        text-align: center;
+        height: 230px;
         max-height: 230px;
         color: $base;
         font-size: $base-font-size;
@@ -53,6 +56,36 @@
         &::-webkit-scrollbar-thumb {
             border-radius: 5px;
             background: linear-gradient(180deg, #71aaebb9, #1884ffbb);
+        }
+    }
+    &__close-item {
+        z-index: 1;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 0;
+        cursor: pointer;
+        &::before {
+            content: '';
+            position: absolute;
+            right: 5px;
+            top: 17px;
+            background: $base-highlight;
+            width: 25px;
+            height: 4px;
+            transform: rotate(45deg);
+            border-radius: 5px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 5px;
+            top: 17px;
+            background: $base-highlight;
+            width: 25px;
+            height: 4px;
+            transform: rotate(135deg);
+            border-radius: 5px;
         }
     }
 }

@@ -11,7 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
     preloader.render();
     const modal = new Modal();
     modal.render();
-
+    
+    
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -24,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if(city && city != '') {
             data = await getWeatherData(city);
         } else {
-            modal.show('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+            modal.show('Введите название города.');
         }
 
         if (data) {
@@ -49,11 +50,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 weatherComponent.render();
                 plug.classList.add('hide');
             } else if (data.cod === '404') {
-                alert('Данные не найдены.');
+                modal.show('Данные не найдены.');
             } else if(data.cod === '522') {
-                alert('Слишком долгое ожидание ответа сервера.');
+                modal.show('Слишком долгое ожидание ответа сервера.');
             } else {
-                alert('Ошибка при поиске данных.');
+                modal.show('Ошибка при поиске данных.');
             }
         }
         preloader.loadingEnd();
