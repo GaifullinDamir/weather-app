@@ -7,7 +7,7 @@ export class Weather {
      * Конструктор для созданиия компонента Weather.
      * Weather отвечает за отображение данных о погоде на сайте.
      * @constructor
-     * @param parent - элемент DOM являющийся родителем для текущего компонента.
+     * @param parent - элемент DOM, являющийся родителем для текущего компонента.
      * @param {string} city - данные о городе.
      * @param {number} temperature - данные о температуре.
      * @param {number} weatherId - данные об id текущей погоды.
@@ -125,7 +125,6 @@ export class Weather {
      * @param {HTMLElement} element - Элемент, в котором отображается текущая температура и погодные условия.
      */
     changeColorByTime(element) {
-        debugger
         const temperatureElement = element;
         const temperatureNumber = element.querySelector('.weather-info__temperature-number');
         let backgroundColor = '';

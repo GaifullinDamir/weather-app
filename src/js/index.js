@@ -1,7 +1,7 @@
 'use strict'
 import { getWeatherData } from "../http/weatherAPI";
 import { Weather, WeatherDTO } from "./entities";
-import { Preloader, Modal, Map } from "./widgets";
+import { Preloader, Modal, Map, Theme } from "./widgets";
 
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.search-form');
@@ -9,10 +9,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const plug = document.querySelector('.plug__container');
     const preloader = new Preloader();
     const modal = new Modal();
+    const theme = new Theme();
 
     preloader.render();
     modal.render();
-    
+    theme.render();
     
     async function handleSubmit(e) {
         e.preventDefault();

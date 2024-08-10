@@ -1,0 +1,7 @@
+.theme {
+    &__img {
+        width: 30px;
+        cursor: pointer;
+        @include logo-hover;
+    }
+}
