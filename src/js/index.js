@@ -66,4 +66,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     form.addEventListener('submit', handleSubmit);
+
+    /**Если нужно будет включить отслеживание изменения системной темы. */
+    // window.matchMedia('(prefers-color-scheme: dark)')
+    //     .addEventListener('change', (e) => {
+    //         const themeId = e.matches ? 1 : 0;
+    //         theme.applyTheme(themeId);
+    //     });
 })
