@@ -1,5 +1,3 @@
-import { IMAGES } from "../../utils/image-paths";
-
 export class Theme {
     
     /**
@@ -56,15 +54,17 @@ export class Theme {
     /**
      * Метод, отвечающий за обработку применения темы оформления сайта.
      */
-    _applyTheme() {
+    applyTheme() {
         const headerLogo = document.querySelector('.header__logo');
+        const preloader = document.querySelector('.preloader__img');
+        const windCompass = document.querySelector('.wind-widget__compass');
+        const windArrow = document.querySelector('.wind-widget__arrow');
         document.documentElement.setAttribute('data-theme', this._themes[this._currentThemeId]);
-
         headerLogo.src = `./images/logos/logo250x100${this._currentThemeId === 1 ? '-dark' : ''}.svg`;
 
-        IMAGES.PRELOADER = `./images/icons/preloader${this._currentThemeId === 1 ? '-dark' : ''}.svg`;
-        IMAGES.WIND_WIDGET_COMPASS = `./images/icons/wind-compass${this._currentThemeId === 1 ? '-dark' : ''}.svg`;
-        IMAGES.WIND_WIDGET_ARROW = `./images/icons/wind-arrow${this._currentThemeId === 1 ? '-dark' : ''}.svg`;
+        preloader ? preloader.src = `./images/icons/preloader${this._currentThemeId === 1 ? '-dark' : ''}.svg` : '';
+        windCompass ? windCompass.src = `./images/icons/wind-compass${this._currentThemeId === 1 ? '-dark' : ''}.svg` : '';
+        windArrow ? windArrow.src = `./images/icons/wind-arrow${this._currentThemeId === 1 ? '-dark' : ''}.svg` : '';
     }
 
     /**
@@ -75,12 +75,12 @@ export class Theme {
         themeElement.classList.add('theme');
         this._themeElement = themeElement;
         this._setThemeIcon();
-        this._applyTheme();
+        this.applyTheme();
         this._themeElement.addEventListener('click', (e) => {
             e.preventDefault();
             this._currentThemeId = this._currentThemeId ? 0 : 1;
             this._setThemeIcon();
-            this._applyTheme();
+            this.applyTheme();
             this.setIsThemeChanged(true);
         });
     }

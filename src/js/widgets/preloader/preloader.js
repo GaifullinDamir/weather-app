@@ -1,5 +1,3 @@
-import { IMAGES } from "../../utils/image-paths";
-
 export class Preloader {
     /**
      * Конструктор класса Preloader.
@@ -9,7 +7,7 @@ export class Preloader {
         this._preloader = document.createElement('div'),
         this._preloader.classList.add('preloader', 'hide'),
         this._preloader.innerHTML = `
-            <img class="preloader__img" src="${IMAGES.PRELOADER}" alt="preloader"/>
+            <img class="preloader__img" src="./images/icons/preloader.svg" alt="preloader"/>
         `
     }
 

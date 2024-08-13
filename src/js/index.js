@@ -51,6 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 weatherComponent.render();
                 const map = new Map(weatherDTO._longitude, weatherDTO._latitude);
                 map.render();
+                theme.applyTheme();
                 plug.classList.add('hide');
             } else if (data.cod === '404') {
                 modal.show('Данные не найдены.');
@@ -65,12 +66,4 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     form.addEventListener('submit', handleSubmit);
-
-    // while (true) {
-    //     if (theme.getIsThemeChanged()) {
-    //         theme.setIsThemeChanged(false);
-    //         preloader.render();
-    //     }
-    // }
-
 })
