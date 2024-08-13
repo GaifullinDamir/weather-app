@@ -6,7 +6,7 @@ export const getWeatherData = async (city) => {
     let data;
     try {
         const response = await axios.get(`${process.env.DEV_ENV.BASE_URL}?q=${city}&appid=${process.env.DEV_ENV.API_KEY}&lang=${process.env.DEV_ENV.WEATHER_LANG}`, {
-            timeout: 3000
+            timeout: 5000
         });
         data = response.data;
     } catch(error) {

@@ -1,0 +1,30 @@
+<svg width="200.000000" height="200.000000" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_16_16_dd" x="35.000000" y="35.000000" width="130.000000" height="130.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feMorphology radius="8" in="" result="BackgroundImageFix"/>
+			<feOffset dx="0" dy="0"/>
+			<feGaussianBlur stdDeviation="4"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0.44314 0 0 0 0 0.66667 0 0 0 0 0.92157 0 0 0 1 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+		<clipPath id="clip16_2">
+			<rect id="200x200" width="200.000000" height="200.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="200x200" width="200.000000" height="200.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip16_2)">
+		<g filter="url(#filter_16_16_dd)">
+			<circle id="Oval 1" cx="100.000000" cy="100.000000" r="45.000000" fill="#C4C4C4" fill-opacity="0"/>
+			<circle id="Oval 1" cx="100.000000" cy="100.000000" r="44.000000" stroke="#ABC6E4" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</g>
+		<path id="Vector 2" d="M102 41.92L102 55L100 55L100 41.92L95.26 41.92L101 32L106.73 41.92L102 41.92Z" fill="#ABC6E4" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="Vector 2" d="M99.08 161.36Q99.52 161.18 100 161.09L100 145L102 145L102 161.09Q102.47 161.18 102.91 161.36Q103.8 161.73 104.53 162.46Q105.26 163.19 105.63 164.08Q106 164.96 106 166Q106 167.03 105.63 167.91Q105.26 168.8 104.53 169.53Q103.8 170.26 102.91 170.63Q102.03 171 101 171Q99.96 171 99.08 170.63Q98.19 170.26 97.46 169.53Q96.73 168.8 96.36 167.91Q96 167.03 96 166Q96 164.96 96.36 164.08Q96.73 163.19 97.46 162.46Q98.19 161.73 99.08 161.36ZM101 163Q100.46 163 100 163.16Q99.92 163.18 99.84 163.22Q99.31 163.43 98.87 163.87Q98.43 164.31 98.21 164.84Q98 165.37 98 166Q98 166.62 98.21 167.15Q98.43 167.68 98.87 168.12Q99.31 168.56 99.84 168.78Q100.37 169 101 169Q101.62 169 102.15 168.78Q102.68 168.56 103.12 168.12Q103.56 167.68 103.78 167.15Q104 166.62 104 166Q104 165.37 103.78 164.84Q103.56 164.31 103.12 163.87Q102.68 163.43 102.15 163.22Q102.07 163.18 102 163.16Q101.53 163 101 163Z" fill="#ABC6E4" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

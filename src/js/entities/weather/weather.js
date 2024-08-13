@@ -1,6 +1,7 @@
 'use strict'
 
 import { WEATHER_ICON_URL_BEGINNING, WEATHER_ICON_URL_END } from "../../utils/consts";
+import { IMAGES } from "../../utils/image-paths";
 
 export class Weather {
     /**
@@ -106,11 +107,11 @@ export class Weather {
                 <div class="weather-info__wind-head">Данные о ветре</div>
                 <div class="wind-widget">
                     <img
-                        src="./images/icons/wind-compass.svg"
+                        src="${IMAGES.WIND_WIDGET_COMPASS}"
                         alt="wind-compass"
                         class="wind-widget__compass">
                     <img
-                        src="./images/icons/wind-arrow.svg"
+                        src="${IMAGES.WIND_WIDGET_ARROW}"
                         alt="wind-arrow"
                         class="wind-widget__arrow">
                     <div class="wind-widget__wind-speed">${this._windSpeed}<br>м/с</div>

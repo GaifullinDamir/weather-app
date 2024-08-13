@@ -42,7 +42,7 @@ export class Modal {
         this._modal
             .querySelector('.modal__close-item')
             .addEventListener('click', (e) => {
-                e.preventDefault(); 
+                e.preventDefault();
                 this.close();
             })
     }

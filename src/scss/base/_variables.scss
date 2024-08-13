@@ -1,17 +1,17 @@
 :root {
     // light-theme
     --base-light: #71aaeb;
-    --footer-light: #002958;
+    --footer-light: #131f2e;
     --base-highlight-light: #1884ff;
     --after-modal-color-light: #00032267;
     --background-base-light: linear-gradient(337deg, rgba(229,239,255,1) 15%, rgba(255,255,255,1) 34%, rgba(223,235,255,1) 50%, rgba(255,255,255,1) 63%, rgba(228,243,255,1) 80%, rgba(255,255,255,1) 89%, rgba(232,244,255,1) 100%);
 
     // dark-theme
-    --base-dark: #71aaeb;
-    --footer-dark: #002958;
-    --base-highlight-dark: #1884ff;
-    --after-modal-color-dark: #00032267;
-    --background-base-dark: linear-gradient(337deg, rgba(229,239,255,1) 15%, rgba(255,255,255,1) 34%, rgba(223,235,255,1) 50%, rgba(255,255,255,1) 63%, rgba(228,243,255,1) 80%, rgba(255,255,255,1) 89%, rgba(232,244,255,1) 100%);
+    --base-dark: #abc6e4;
+    --footer-dark: #1b2025;
+    --base-highlight-dark: #9bcaff;
+    --after-modal-color-dark: #0d0d138f;
+    --background-base-dark: linear-gradient(337deg, rgba(21,24,31,1) 15%, rgba(39,49,56,1) 34%, rgba(33,38,47,1) 50%, rgba(44,53,61,1) 63%, rgba(29,35,41,1) 80%, rgba(50,58,70,1) 89%, rgba(54,60,65,1) 100%);
 
     // size
     --base-font-size: 24px;
@@ -28,7 +28,7 @@
 
 [data-theme="light"] {
     --base: var(--base-light);
-    --footert: var(--footer-light);
+    --footer: var(--footer-light);
     --base-highlight: var(--base-highlight-light);
     --after-modal-color: var(--after-modal-color-light);
     --background-base: var(--background-base-light);
