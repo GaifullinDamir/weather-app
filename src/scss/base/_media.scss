@@ -3,14 +3,167 @@
 }
 
 @media (max-width: 991px) {
+    :root {
+        --container-width: 767px;
+        --h1-font-size: 28px;
+        --h2-font-size: 24px;
+        --base-font-size: 18px;
+    }
+    .header {
+        &__logo {
+            height: 45px;
+        }
+    }
 
+    .theme {
+        &__img {
+            width: 25px;
+        }
+        margin-right: 10px;
+    }
+
+    .weather-info {
+        &__container {
+            padding: 25px 25px 0px 25px;
+        }
+    }
+
+    .right-side {
+        justify-content: center;
+    }
+
+    #map {
+        width: 740px;
+    }
+
+    .modal {
+        &__container {
+            width: 360px;
+            height: 195px;
+        }
+        &__message {
+            height: 150px;
+            max-height: 150px;
+        }
+        &__close-item {
+            &::before {
+                width: 20px;
+            }
+            &::after {
+                width: 20px;
+            }
+        }
+    }
 }
 
 
 @media (max-width: 767px) {
+    :root {
+        --container-width: 575px;
+        --items-font-size: 12px;
+    }
+    
+    .header {
+        &__logo {
+            height: 45px;
+        }
+    }
 
+    .search-form {
+        &__input {
+            width: 250px;
+        }
+        &__button {
+            width: 75px;
+        }
+    }
+
+    .weather-info {
+        &__container {
+            justify-content: space-around;
+        }
+    }
+
+    .wind-widget {
+        width: 175px;
+        height: 175px;
+        &__compass {
+            width: 175px;
+        }
+        &__arrow {
+            width: 175px;
+        }
+        &__wind-speed {
+            top: calc(50% - 15px);
+            left: calc(50% - 12px);
+        }
+    }
+
+    #map {
+        width: 540px;
+    }
 }
 
 @media (max-width: 575px) {
-    
+    :root {
+        --container-width: 375px;
+        --items-font-size: 9px;
+        --base-font-size: 14px;
+        --h1-font-size: 20px;
+        --h2-font-size: 18px;
+    }
+    .header {
+        &__logo {
+            height: 30px;
+        }
+    }
+
+    .search-form {
+        &__input {
+            width: 175px;
+            height: 25px;
+        }
+        &__button {
+            width: 50px;
+            height: 25px;
+        }
+    }
+
+    .theme {
+        &__img {
+            width: 20px;
+        }
+        margin-left: 10px;
+    }
+
+
+    .wind-widget {
+        width: 125px;
+        height: 125px;
+        &__compass {
+            width: 125px;
+        }
+        &__arrow {
+            width: 125px;
+        }
+        &__wind-speed {
+            top: calc(50% - 12px);
+            left: calc(50% - 9px);
+        }
+    }
+
+    #map {
+        width: 330px;
+    }
+
+    .modal {
+        &__container {
+            width: 320px;
+            height: 170px;
+        }
+        &__message {
+            height: 130px;
+            max-height: 130px;
+        }
+    }
 }

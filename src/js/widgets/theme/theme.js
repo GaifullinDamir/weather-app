@@ -71,7 +71,6 @@ export class Theme {
             e.preventDefault();
             const themeId = this._currentThemeId ? 0 : 1;
             this.applyTheme(themeId);
-            this.setIsThemeChanged(true);
         });
     }
  

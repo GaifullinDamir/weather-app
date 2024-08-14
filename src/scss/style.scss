@@ -1,7 +1,6 @@
 @import './base/keyframes';
 @import './base/variables';
 @import './base/mixins';
-@import './base/media';
 
 * {
     box-sizing: border-box;
@@ -37,6 +36,7 @@ body {
 @import './blocks/modal';
 @import './blocks/map';
 
+@import './base/media';
 
 .hide {
     display: none;

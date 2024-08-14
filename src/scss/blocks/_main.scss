@@ -2,7 +2,7 @@
     min-height: calc(100%);
     &__container {
         min-height: calc(100% );
-        width: 950px;
+        width: var(--container-width);
         display: flex;
         flex-direction: column;
         align-items: center;

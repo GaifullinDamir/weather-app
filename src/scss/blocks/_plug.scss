@@ -1,7 +1,7 @@
 .plug {
     &__container {
         height: calc(100vh - var(--header-hight));
-        width: 950px;
+        width: var(--container-width);
         flex-direction: column;
         display: flex;
         justify-content: center;
